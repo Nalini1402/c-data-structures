@@ -1,0 +1,27 @@
+#include<stdio.h>
+main()
+{
+	int arr[]={3,3,5,5,7,9,10};
+	int len=sizeof(arr)/sizeof(int);
+	int mid,i,n,sind,eind;
+	scanf("%d",&n);
+	
+	sind=0;
+	eind=len-1;
+	
+	while(sind<=eind)
+	{
+		mid=(sind+eind)/2; 
+		//printf("\nMid=%d-%d\n",mid,arr[mid]);
+		if(arr[mid]==n)//  n=n
+		{
+			printf("\nLoc:%d!",mid);
+			break;
+		}
+		if(arr[mid]>n)
+			eind=mid-1;
+		else
+			sind=mid+1;
+	}
+	
+}
